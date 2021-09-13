@@ -7,12 +7,23 @@ import { useRouter } from 'next/router'
 import { useSearchParam } from 'react-use'
 import BodyClassName from 'react-body-classname'
 import useDarkMode from 'use-dark-mode'
-import { PageBlock } from 'notion-types'
+import { PageBlock } from 'packages/notion-types/src'
 
 import { Tweet, TwitterContextProvider } from 'react-static-tweets'
 
 // core notion renderer
-import { NotionRenderer, Code, Collection, CollectionRow } from 'react-notion-x'
+// import {
+//   Code,
+//   Collection,
+//   CollectionRow
+// } from 'react-notion-x'
+
+// import { NotionRenderer } from 'react-notion-x'
+// custom notion renderer
+import { NotionRenderer } from './renderer'
+import { Code } from './code'
+import { Collection } from './collection'
+import { CollectionRow } from './collection-row'
 
 // utils
 import { getBlockTitle } from 'notion-utils'
@@ -34,6 +45,7 @@ import { Footer } from './Footer'
 import { PageSocial } from './PageSocial'
 import { GitHubShareButton } from './GitHubShareButton'
 import { ReactUtterances } from './ReactUtterances'
+import { PageHeader } from './Header'
 
 import styles from './styles.module.css'
 
@@ -268,6 +280,9 @@ export const NotionPage: React.FC<types.PageProps> = ({
         searchNotion={searchNotion}
         pageFooter={comments}
         pageAside={pageAside}
+        // pageHeader={
+        //   <PageHeader />
+        // }
         footer={
           <Footer
             isDarkMode={darkMode.value}
@@ -279,4 +294,5 @@ export const NotionPage: React.FC<types.PageProps> = ({
       <GitHubShareButton />
     </TwitterContextProvider>
   )
+
 }

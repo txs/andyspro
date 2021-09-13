@@ -19,7 +19,7 @@ module.exports = {
   // social usernames (optional)
   twitter: 'txshon',
   github: 'txs',
-  linkedin: 'fisch2',
+  linkedin: 'andyt08',
 
   // default notion icon and cover images for site-wide consistency (optional)
   // page-specific values will override these site-wide defaults
@@ -49,8 +49,11 @@ module.exports = {
   // }
   // pageUrlOverrides: null
   pageUrlOverrides: {
+    '/blog': 'd0d2ae4ecdcb402ba5ef71302edfc2b4',
+    '/blog-react': 'cc3f3a663d8f4216808a38a5c44cae73',
+    '/blog-gatsby': '13a301f8694d49c79f4b49ccfd14c900',
     '/tw': 'd7ee3960142449a3bcf03f9ddb108645',
-    '/blog': '41f2f0619fd441b8932b8ab5944fa466'
+    '/tw-blog': '41f2f0619fd441b8932b8ab5944fa466'
 
   }
 
