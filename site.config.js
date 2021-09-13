@@ -52,6 +52,7 @@ module.exports = {
     '/blog': 'd0d2ae4ecdcb402ba5ef71302edfc2b4',
     '/blog-react': 'cc3f3a663d8f4216808a38a5c44cae73',
     '/blog-gatsby': '13a301f8694d49c79f4b49ccfd14c900',
+    '/course': 'ecc14d481c364a4291b19f516c3406cd',
     '/tw': 'd7ee3960142449a3bcf03f9ddb108645',
     '/tw-blog': '41f2f0619fd441b8932b8ab5944fa466'
 
