@@ -39,6 +39,8 @@ import { useRouter } from 'next/router'
 import { bootstrap } from 'lib/bootstrap-client'
 import { fathomId, fathomConfig } from 'lib/config'
 import * as Fathom from 'fathom-client'
+import * as gtag from "../lib/gtag";
+const isProduction = process.env.NODE_ENV === "production";
 
 if (typeof window !== 'undefined') {
   bootstrap()
@@ -50,16 +52,16 @@ export default function App({ Component, pageProps }) {
   React.useEffect(() => {
     if (fathomId) {
       Fathom.load(fathomId, fathomConfig)
-
-      function onRouteChangeComplete() {
+    }
+    const onRouteChangeComplete = (url: URL) => {
+      if (fathomId) {
         Fathom.trackPageview()
       }
-
-      router.events.on('routeChangeComplete', onRouteChangeComplete)
-
-      return () => {
-        router.events.off('routeChangeComplete', onRouteChangeComplete)
-      }
+      if (isProduction) gtag.pageview(url);
+    }
+    router.events.on('routeChangeComplete', onRouteChangeComplete)
+    return () => {
+      router.events.off('routeChangeComplete', onRouteChangeComplete)
     }
   }, [])
 
