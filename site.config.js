@@ -12,7 +12,7 @@ module.exports = {
   author: 'Andy Tseng',
 
   // open graph metadata (optional)
-  description: 'Example site description',
+  description: 'Hi, Welcome to Andy\'s Pro. Here we\'ll share about tech reviews, code tutorials, research ideas, and some DIY tool productivity HACKS!',
   socialImageTitle: 'Andy\'s Pro',
   socialImageSubtitle: 'Hello World! 👋',
 
