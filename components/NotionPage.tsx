@@ -46,8 +46,10 @@ import { PageSocial } from './PageSocial'
 import { GitHubShareButton } from './GitHubShareButton'
 import { ReactUtterances } from './ReactUtterances'
 import { PageHeader } from './Header'
+import FbComments from "./FbComments";
 
 import styles from './styles.module.css'
+import { hostname } from 'os'
 
 // const Code = dynamic(() =>
 //   import('react-notion-x').then((notion) => notion.Code)
@@ -161,6 +163,11 @@ export const NotionPage: React.FC<types.PageProps> = ({
         />
       )
     }
+    comments = (
+      <FbComments
+        href={'https://' + site.domain + router.asPath}
+      />
+    )
 
     const tweet = getPageTweet(block, recordMap)
     if (tweet) {
